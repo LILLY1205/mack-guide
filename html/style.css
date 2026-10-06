@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
+
+@font-face {
+    font-family: 'Crock';
+    src: url('font/crock.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    background: transparent;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.menu-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.menu-wrapper.visible {
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.clipboard-container {
+    width: 1150px;
+    height: 1550px;
+    background-image: url('images/clipboard.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center top;
+    position: relative;
+    transform: translateY(100%);
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.7));
+    z-index: 10;
+}
+
+.menu-wrapper.visible .clipboard-container {
+    transform: translateY(19%);
+}
+
+.paper-area {
+    position: absolute;
+    top: 25%;
+    left: 14%;
+    right: 14%;
+    bottom: 8%;
+    padding: 20px 40px;
+    font-family: 'Courier Prime', monospace;
+    color: #1a1510;
+    display: flex;
+    flex-direction: column;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.stamped-header {
+    font-family: 'Crock', serif;
+    font-size: 38px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #1a1510;
+    border-bottom: 2px solid #1a1510;
+    padding-bottom: 6px;
+    letter-spacing: 1px;
+    opacity: 0.95;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.4);
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.close-tab {
+    background: transparent;
+    border: none;
+    padding: 5px 10px;
+    font-family: 'Crock', serif;
+    font-size: 16px;
+    cursor: pointer;
+    color: #1a1510;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.close-tab:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+.sub-heading {
+    font-family: 'Courier Prime', monospace;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #3e3226;
+    margin-bottom: 6px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.guide-layout {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 14px;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.guide-col {
+    background: transparent;
+    border: 1px solid #3e3226;
+    padding: 10px;
+    overflow-y: auto;
+    min-width: 0;
+}
+
+.guide-col::-webkit-scrollbar {
+    width: 6px;
+}
+
+.guide-col::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.guide-col::-webkit-scrollbar-thumb {
+    background: #1a1510;
+    border-radius: 2px;
+}
+
+.sidebar-col {
+    max-height: 100%;
+}
+
+.content-col {
+    max-height: 100%;
+}
+
+.category-tabs-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.category-button {
+    padding: 6px 10px;
+    background: transparent;
+    border: 1px solid #3e3226;
+    color: #3e3226;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Courier Prime', monospace;
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    text-align: left;
+    width: 100%;
+}
+
+.category-button:hover {
+    text-decoration: underline;
+    background: rgba(44, 36, 27, 0.05);
+}
+
+.category-button.active {
+    background: #1a1510;
+    color: #f5ebd2;
+    border-color: #1a1510;
+}
+
+.content-area {
+    max-height: 100%;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.content-area::-webkit-scrollbar {
+    width: 6px;
+}
+
+.content-area::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.content-area::-webkit-scrollbar-thumb {
+    background: #1a1510;
+    border-radius: 2px;
+}
+
+.welcome-message {
+    text-align: center;
+    padding: 40px 10px;
+}
+
+.welcome-message h2 {
+    font-family: 'Crock', serif;
+    font-size: 28px;
+    color: #1a1510;
+    margin-bottom: 15px;
+}
+
+.welcome-message p {
+    font-size: 14px;
+    color: #3e3226;
+    line-height: 1.6;
+}
+
+.page-section {
+    margin-bottom: 16px;
+    padding: 12px;
+    border: 1px solid #3e3226;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.page-section h3 {
+    font-family: 'Crock', serif;
+    font-size: 20px;
+    color: #1a1510;
+    margin-bottom: 8px;
+}
+
+.page-section h4 {
+    font-family: 'Courier Prime', monospace;
+    font-size: 13px;
+    color: #3e3226;
+    margin: 10px 0 5px 0;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.page-section p {
+    font-size: 12px;
+    color: #1a1510;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.kit-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border: 1px solid #3e3226;
+    color: #3e3226;
+    font-size: 11px;
+    font-weight: 700;
+    margin: 5px 0;
+    text-transform: uppercase;
+}
+
+.recipe-list, .feature-list, .item-list, .howto-list {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0;
+}
+
+.recipe-list li, .feature-list li, .item-list li, .howto-list li {
+    padding: 6px 10px;
+    margin: 4px 0;
+    border: 1px solid #3e3226;
+    font-size: 11px;
+    color: #1a1510;
+}
+
+.recipe-name, .item-name {
+    font-weight: bold;
+    color: #1a1510;
+    display: block;
+    margin-bottom: 2px;
+    font-size: 12px;
+}
+
+.recipe-ingredients, .item-use {
+    font-size: 11px;
+    color: #3e3226;
+    font-style: italic;
+}
+
+.rewards-box {
+    padding: 10px;
+    border: 1px dashed #3e3226;
+    margin: 8px 0;
+    font-size: 12px;
+}
+
+.rewards-box strong {
+    color: #1a1510;
+}
+
+.tips-box {
+    padding: 10px;
+    border-left: 3px solid #3e3226;
+    margin: 8px 0;
+    font-style: italic;
+    font-size: 11px;
+    color: #3e3226;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page-section {
+    animation: fadeIn 0.3s ease-out;
+}

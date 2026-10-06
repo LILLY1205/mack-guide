@@ -1,0 +1,1 @@
+	['countyguide']      = {['name'] = 'countyguide',      ['label'] = 'County Guide',       ['weight'] = 25, ['type'] = 'item', ['image'] = 'countyguide.png',      ['unique'] = true, ['useable'] = true,  ['shouldClose'] = true, ['combinable'] = nil, ['level'] = 0, ['description'] = 'A helpful guide to the county'},

@@ -1,0 +1,101 @@
+========================================
+  MACK-GUIDE - QUICK INSTALLATION
+========================================
+
+STEP 1: Add to Resources
+-------------------------
+1. Copy "mack-guide" folder to your server's resources directory
+2. Add to server.cfg:
+   ensure mack-guide
+
+
+STEP 2: Add Item to RSG-Core
+-----------------------------
+Add to rsg-core/shared/items.lua:
+
+['countyguide'] = {
+    ['name'] = 'countyguide',
+    ['label'] = 'County Guide',
+    ['weight'] = 25,
+    ['type'] = 'item',
+    ['image'] = 'countyguide.png',
+    ['unique'] = true,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['level'] = 0,
+    ['description'] = 'A helpful guide to the county'
+}
+
+
+STEP 3: Add Image
+-----------------
+Copy: install/countyguide.png
+To: rsg-inventory/html/images/countyguide.png
+
+
+STEP 4: Configure (Optional)
+-----------------------------
+Edit config.lua to customize:
+- Config.ItemName = 'countyguide'  (change item name)
+- Config.AdminJobs = {...}         (change admin jobs)
+- Config.ServerInfo = {...}        (customize content)
+
+
+STEP 5: Restart Server
+-----------------------
+Restart your RedM server or use:
+refresh
+ensure mack-guide
+
+
+========================================
+  USAGE
+========================================
+
+PLAYER COMMANDS:
+- Use "County Guide" item from inventory
+- Type: /guide
+
+ADMIN COMMANDS:
+- Type: /updateguide (requires admin job)
+
+
+========================================
+  CONFIGURATION OPTIONS
+========================================
+
+Want to use a different item name?
+Edit config.lua line 4:
+Config.ItemName = 'youritemname'
+
+Then update:
+1. Item definition in items.lua (name, image)
+2. Image file name to match
+
+
+========================================
+  TROUBLESHOOTING
+========================================
+
+Issue: Item doesn't work
+Fix: Check Config.ItemName matches your item definition
+
+Issue: UI shows "Dutton"
+Fix: Make sure you're using mack-guide, not duttonbook
+
+Issue: Admin can't edit
+Fix: Check Config.AdminJobs includes your job name
+
+Issue: Image not showing
+Fix: Verify image is in rsg-inventory/html/images/
+
+
+========================================
+  SUPPORT
+========================================
+
+Read full documentation: README.md
+See all changes: CHANGES.md
+
+Made with ❤️ for the RedM community

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>County Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="guideUI" class="menu-wrapper">
+        <div class="clipboard-container">
+            <div class="paper-area">
+                <div class="header-section">
+                    <h1 class="stamped-header" id="guideTitle">County Guide</h1>
+                    <button class="close-tab" id="closeButton">Close</button>
+                </div>
+                <div class="guide-layout">
+                    <div class="guide-col sidebar-col">
+                        <h3 class="sub-heading">Categories</h3>
+                        <div id="categoryList" class="category-tabs-vertical"></div>
+                    </div>
+                    <div class="guide-col content-col">
+                        <h3 class="sub-heading" id="contentTitle">Welcome</h3>
+                        <div id="pageContent" class="content-area">
+                            <div class="welcome-message">
+                                <h2>County Guide</h2>
+                                <p>Select a category from the sidebar to view available features, crafting recipes, and activities on the server.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
